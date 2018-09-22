@@ -1,4 +1,6 @@
 require "bundler/setup"
+require 'webmock/rspec'
+require 'pry'
 require "made_to_measure"
 
 RSpec.configure do |config|
