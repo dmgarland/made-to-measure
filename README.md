@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-See the spec folder
+See the spec folder for example usage. See the `lib/made_to_measure/version.rb` to decide whether you want to use this in production. ;)
 
 ## Development
 
