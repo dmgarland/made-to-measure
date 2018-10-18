@@ -1,10 +1,13 @@
-module MadeToMeasure
+module MadeToMeasure::Ecommerce
   # https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#ecom
   #
-  class Transaction < Interaction
+  class Transaction < MadeToMeasure::Interaction
+    attr_accessor :items
+
     def initialize(id:, client_id: nil, affiliation: nil, revenue: nil, shipping: nil, tax: nil, currency_code: nil)
       @id, @client_id, @affiliation, @revenue, @shipping, @tax, @currency_code =
       id, client_id, affiliation, revenue, shipping, tax, currency_code
+      @items = []
     end
 
     def to_h

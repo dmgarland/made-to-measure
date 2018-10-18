@@ -1,7 +1,7 @@
-module MadeToMeasure
+module MadeToMeasure::Ecommerce
   # https://developers.google.com/analytics/devguides/collection/protocol/v1/devguide#ecom
   #
-  class Item < Interaction
+  class Item < MadeToMeasure::Interaction
     def initialize(transaction_id:, client_id:, name:, price: nil, quantity: nil, sku: nil, variant: nil, currency_code: nil)
       @transaction_id, @client_id, @name, @price , @quantity , @sku , @variant , @currency_code =
       transaction_id, client_id, name, price , quantity , sku , variant , currency_code

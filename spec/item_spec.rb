@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-RSpec.describe MadeToMeasure::Item do
+RSpec.describe MadeToMeasure::Ecommerce::Item do
 
   let(:item) do
-     MadeToMeasure::Item.new(
+     MadeToMeasure::Ecommerce::Item.new(
       :transaction_id => 12345,
       :client_id => 555,
       :name => 'sofa',
