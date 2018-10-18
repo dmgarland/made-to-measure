@@ -10,6 +10,17 @@ module MadeToMeasure::Ecommerce
       @items = []
     end
 
+    def commit
+      super
+
+      @items.each do |item_attributes|
+        params = item_attributes.merge(:transaction_id => @id,
+          :client_id => @client_id, :currency_code => @currency_code)
+        item = Item.new(params)
+        item.commit
+      end
+    end
+
     def to_h
       super.merge({
         ti: @id,
