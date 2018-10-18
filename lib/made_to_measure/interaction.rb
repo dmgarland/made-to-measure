@@ -1,5 +1,8 @@
 module MadeToMeasure
   class Interaction
+    include HTTParty
+    base_uri 'https://www.google-analytics.com'
+
     def to_h
       {
         v: MadeToMeasure.version || 1,
