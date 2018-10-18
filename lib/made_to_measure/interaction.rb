@@ -12,8 +12,15 @@ module MadeToMeasure
       }
     end
 
+    def user_agent
+      "MadeToMeasure/#{MadeToMeasure::VERSION} (+https://github.com/dmgarland/made-to-measure)"
+    end
+
     def commit
-      self.class.post("/collect", { query: to_h })
+      self.class.post("/collect", {
+        headers: { "User-Agent" => user_agent },
+        query: to_h
+      })
     end
   end
 end

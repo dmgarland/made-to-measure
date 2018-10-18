@@ -12,6 +12,10 @@ RSpec.describe MadeToMeasure::Interaction do
     it "uses a 1 as the default protocol version" do
       expect(MadeToMeasure::Interaction.new.to_h[:v]).to eq(1)
     end
+
+    it "builds a user agent string" do
+      expect(MadeToMeasure::Interaction.new.user_agent).to eq("MadeToMeasure/0.2.2 (+https://github.com/dmgarland/made-to-measure)")
+    end
   end
 
 end
