@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    made_to_measure (0.3.2)
+    made_to_measure (0.3.0)
       httparty
 
 GEM
