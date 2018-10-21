@@ -18,7 +18,7 @@ RSpec.describe MadeToMeasure::Pageview do
   describe 'commit' do
     before do
       @request = stub_request(:post, 'https://www.google-analytics.com/collect?cid=111&dh=mytest.com&dp=/test&dt=test&t=pageview&tid=UA-12345-6&v=1')
-                 .with(headers: { 'User-Agent': 'MadeToMeasure/0.2.2 (+https://github.com/dmgarland/made-to-measure)' })
+                 .with(headers: { 'User-Agent': user_agent_regexp })
                  .to_return(status: 200, body: '', headers: {})
     end
 

@@ -25,11 +25,11 @@ RSpec.describe MadeToMeasure::Ecommerce::Item do
   describe "commit" do
     before do
       @item_spec = stub_request(:post, "https://www.google-analytics.com/collect?cid=555&cu=EUR&ic=u3eqds43&in=sofa&ip=300&iq=2&iv=furniture&t=item&ti=12345&tid=UA-12345-3&v=1").
-         with(
-           headers: {
-          'User-Agent'=>'MadeToMeasure/0.2.2 (+https://github.com/dmgarland/made-to-measure)'
-           }).
-         to_return(status: 200, body: "", headers: {})
+        with(
+          headers: {
+            'User-Agent'=> user_agent_regexp
+          }).
+        to_return(status: 200, body: "", headers: {})
 
       item.commit
     end

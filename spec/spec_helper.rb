@@ -14,3 +14,7 @@ RSpec.configure do |config|
     c.syntax = :expect
   end
 end
+
+def user_agent_regexp
+  /MadeToMeasure\/[\d]*.[\d]*.[\d]*\s\(\+https:\/\/github.com\/dmgarland\/made-to-measure\)/
+end

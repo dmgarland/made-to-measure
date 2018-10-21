@@ -1,7 +1,6 @@
 require 'spec_helper'
 
 RSpec.describe MadeToMeasure::Interaction do
-
   describe "to_h" do
     it "uses a UUID version 4 as default client_id" do
       uuid = '58f61617-9854-425a-b25d-5fa0561ad6a8'
@@ -14,7 +13,7 @@ RSpec.describe MadeToMeasure::Interaction do
     end
 
     it "builds a user agent string" do
-      expect(MadeToMeasure::Interaction.new.user_agent).to eq("MadeToMeasure/0.2.2 (+https://github.com/dmgarland/made-to-measure)")
+      expect(MadeToMeasure::Interaction.new.user_agent).to match(user_agent_regexp)
     end
   end
 
